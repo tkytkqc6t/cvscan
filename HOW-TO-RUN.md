@@ -2,24 +2,59 @@
 
 This guide covers all methods to start the CVScan application.
 
-## ⚡ Quick Start (Recommended)
+## 🚀 First-Time Installation (Complete Setup)
+
+### Windows
+Download and run the installation script:
+```powershell
+.\windows_install.bat
+```
+
+This script will:
+1. ✅ Clone the repository from GitHub
+2. ✅ Install all dependencies automatically
+3. ✅ Start all 3 services
+4. ✅ Open the browser to http://localhost:3001
+
+**Requirements:** Git, Node.js, and Python must be installed on your system.
+
+### macOS/Linux
+Download and run the installation script:
+```bash
+chmod +x macos_install.sh
+./macos_install.sh
+```
+
+This script will:
+1. ✅ Clone the repository from GitHub
+2. ✅ Install all dependencies automatically
+3. ✅ Start all 3 services
+4. ✅ Open the browser to http://localhost:3001
+
+**Requirements:** Git, Node.js, and Python 3 must be installed on your system.
+
+---
+
+## ⚡ Quick Start (After Installation)
+
+If you already have the repository cloned and dependencies installed, use these commands:
 
 ### Windows
 ```powershell
+cd cvscan
 .\run.bat
 ```
 
 ### macOS/Linux
 ```bash
-chmod +x run.sh
+cd cvscan
 ./run.sh
 ```
 
 That's it! The script will:
 1. ✅ Pull latest code from GitHub
-2. ✅ Install all dependencies
-3. ✅ Start all 3 servers
-4. ✅ Open the browser automatically
+2. ✅ Start all 3 servers
+3. ✅ Open the browser automatically
 
 ---
 
@@ -173,6 +208,12 @@ Manually open: **http://localhost:3001**
 - [README.md](README.md) - Full documentation
 - [SAMPLE_DATA.md](SAMPLE_DATA.md) - Test data
 - [QUICKSTART.md](QUICKSTART.md) - 5-minute setup guide
+
+### Setup Scripts
+- **windows_install.bat** - First-time installation for Windows
+- **macos_install.sh** - First-time installation for macOS/Linux
+- **run.bat** - Quick start for Windows (after installation)
+- **run.sh** - Quick start for macOS/Linux (after installation)
 
 ---
 
