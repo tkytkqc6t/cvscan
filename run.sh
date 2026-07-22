@@ -1,5 +1,21 @@
 #!/bin/bash
 
+# Fix CRLF line endings when running on macOS/Unix (prevents "No such file or directory")
+# If this script contains CR characters, convert in-place and re-exec.
+if grep -q $'\r' "$0" >/dev/null 2>&1; then
+    echo "Detected CRLF line endings in $0 — converting to LF and re-running..."
+    if command -v perl >/dev/null 2>&1; then
+        perl -pi -e 's/\r$//' "$0"
+    elif command -v sed >/dev/null 2>&1; then
+        # macOS sed requires an argument for -i; try both forms
+        sed -i '' -e 's/\r$//' "$0" 2>/dev/null || sed -i -e 's/\r$//' "$0"
+    else
+        echo "Please install 'perl' or 'dos2unix' and run: dos2unix $0"
+        exit 1
+    fi
+    exec "$SHELL" "$0" "$@"
+fi
+
 # CVScan - Automated Setup and Run Script for macOS/Linux
 # This script downloads latest code, installs dependencies, and starts all servers
 
