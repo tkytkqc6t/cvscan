@@ -1,0 +1,17 @@
+# Enforce LF for shell scripts to avoid CRLF issues on macOS/Linux
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+
+# Ensure specific run scripts use LF
+/run.sh text eol=lf
+/macos_install.sh text eol=lf
+
+# Keep PowerShell files with CRLF on Windows
+*.ps1 text eol=crlf
+
+# Normalize other text files
+*.md text
+*.py text
+*.js text
+*.json text
