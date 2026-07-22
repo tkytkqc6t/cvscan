@@ -39,55 +39,7 @@ Your **CVScan** - Resume Validation & Scoring Platform is now ready! This is a p
 - **setup.bat** - Windows automated setup
 - **setup.sh** - Unix/Linux/Mac automated setup
 
----
-
-## 🚀 Quick Start (3 Easy Steps)
-
-### Step 1: Install Dependencies
-Choose ONE of these:
-
-**Windows (Automatic):**
-```
-setup.bat
-```
-
-**macOS/Linux (Automatic):**
-```bash
-chmod +x setup.sh
-./setup.sh
-```
-
-**Manual (All Platforms):**
-```bash
-cd server && npm install && cd ..
-cd client && npm install && cd ..
-cd ai-service && pip install -r requirements.txt && cd ..
-```
-
-### Step 2: Start Services (Open 3 Terminals)
-
-**Terminal 1 - Backend:**
-```bash
-cd server
-npm start
-```
-
-**Terminal 2 - Frontend:**
-```bash
-cd client
-npm start
-```
-
-**Terminal 3 - AI Service (Optional):**
-```bash
-cd ai-service
-python app.py
-```
-
-### Step 3: Open Browser
-Navigate to **http://localhost:3000** 🎉
-
----
+-----
 
 ## 🎯 Key Features
 
@@ -384,31 +336,3 @@ The application is ready for:
 ---
 
 ## 🎉 You're All Set!
-
-Your CVScan application is complete and ready to use. Follow these simple steps:
-
-```bash
-# 1. Run setup
-setup.bat (Windows) or ./setup.sh (Unix)
-
-# 2. Open 3 terminals
-
-# Terminal 1:
-cd server && npm start
-
-# Terminal 2:
-cd client && npm start
-
-# Terminal 3:
-cd ai-service && python app.py
-
-# 3. Open browser
-http://localhost:3000
-```
-
-**Enjoy your Resume Validation Platform! 📄✨**
-
----
-
-*Last Updated: 2026-07-22*
-*Version: 1.0.0*

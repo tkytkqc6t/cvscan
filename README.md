@@ -1,114 +1,73 @@
-# CVScan - Resume Validation & Scoring Platform
-
-A comprehensive web application that validates and rates resumes against job descriptions using AI algorithms. The app analyzes skills, experience, and provides a matching score.
-
-## 🎯 Features
-
-- **Two-Column Layout**: 
-  - Left: Job Description input with skill extraction
-  - Right: Resume upload and analysis
-- **Resume Upload**: Support for PDF and DOCX formats
-- **AI Analysis**:
-  - Extract required skills from job description
-  - Analyze candidate's skills and experience
-  - Compare resume with job requirements
-  - Generate matching score (0-100%)
-  - Highlight key matching skills
-  - Identify duplicate sentences between JD and resume
-  - Suggest missing skills
-
-## 📋 Project Structure
-
-```
-CVScan/
-├── server/                 # Node.js/Express backend
-│   ├── server.js          # Main server file
-│   ├── package.json       # Backend dependencies
-│   └── .env              # Environment variables
-├── client/                # React frontend
-│   ├── public/
-│   │   └── index.html
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   ├── components/
-│   │   │   ├── JobDescriptionSection.js
-│   │   │   └── ResumeSection.js
-│   │   └── styles
-│   └── package.json
-├── ai-service/            # Python AI module
-│   ├── app.py
-│   └── requirements.txt
-└── README.md
-```
-
-## 🛠️ Tech Stack
-
-- **Frontend**: React 18, Axios, CSS3
-- **Backend**: Node.js, Express, Multer (file handling)
-- **AI/NLP**: Python with NLTK
-- **File Processing**: PDF-parse, DOCX support
+# CVScan Installation & Running Guide
 
 ## ✅ Prerequisites
 
-Before installing CVScan, ensure you have:
-- **Git** (v2.30+): https://git-scm.com/
-- **Node.js** (v16+ or v18+ LTS): https://nodejs.org/
-- **Python 3** (v3.8+): https://python.org/
+Before installing CVScan, ensure you have these tools:
 
-Verify installation:
+**1. Git** - https://git-scm.com/
+- Windows: Download installer
+- macOS: `brew install git`
+- Linux: `sudo apt-get install git`
+
+**2. Node.js** - https://nodejs.org/ (v16+ or v18+ LTS)
+- Download the LTS version
+- This includes npm automatically
+
+**3. Python 3** - https://python.org/ (3.8 or higher)
+- Windows: Download installer
+- macOS: `brew install python3`
+- Linux: `sudo apt-get install python3`
+
+**Verify Installation:**
 ```bash
 git --version
 node --version
 npm --version
-python --version
+python3 --version
 ```
 
-## 📦 Installation
+## ⚡ Quick Install (Choose One)
 
-### Option 1: Automated Installation (Recommended)
+### Option A: Automated Setup (Recommended - First Time)
 
-**Windows:**
-```bash
+#### Windows:
+```batch
 .\windows_install.bat
 ```
 
-**macOS/Linux:**
+#### macOS/Linux:
 ```bash
 chmod +x macos_install.sh
 ./macos_install.sh
 ```
 
-This script will:
-1. Clone the repository
-2. Install all dependencies
-3. Start all services
-4. Open the app in your browser
+### Option B: Quick Start (After Installation)
 
-### Option 2: Manual Setup
-
-**Clone Repository:**
-```bash
-git clone https://github.com/tkytkqc6t/cvscan.git
-cd cvscan
+#### Windows:
+```batch
+.\run.bat
 ```
 
-**Backend Setup
+#### macOS/Linux:
+```bash
+./run.sh
+```
 
+### Option C: Manual Installation
+
+#### 1. Backend Setup
 ```bash
 cd server
 npm install
 ```
 
-### Frontend Setup
-
+#### 2. Frontend Setup
 ```bash
 cd client
 npm install
 ```
 
-### AI Service Setup
-
+#### 3. AI Service Setup (Optional)
 ```bash
 cd ai-service
 pip install -r requirements.txt
@@ -116,145 +75,236 @@ pip install -r requirements.txt
 
 ## 🚀 Running the Application
 
-### 1. Start the Backend Server
+You will need **3 Terminal Windows** to run all services. Open them side by side:
 
+### Terminal 1️⃣: Start Backend Server
 ```bash
 cd server
 npm start
-# or for development with auto-reload
-npm run dev
 ```
+✓ Server runs on: http://localhost:5000
+✓ You should see: "Server is running on http://localhost:5000"
 
-The server will run on `http://localhost:5000`
-
-### 2. Start the Frontend (in another terminal)
-
+### Terminal 2️⃣: Start Frontend (Main App)
 ```bash
 cd client
 npm start
 ```
+✓ App opens at: http://localhost:3000
+✓ Browser will auto-open with the application
 
-The app will open at `http://localhost:3000`
-
-### 3. Start the AI Service (optional, in another terminal)
-
+### Terminal 3️⃣: Start AI Service (Optional but Recommended)
 ```bash
 cd ai-service
 python app.py
 ```
+✓ AI Service runs on: http://localhost:5001
+✓ You should see: "Running on http://127.0.0.1:5001"
 
-The AI service will run on `http://localhost:5001`
+## 🎨 Using the Application
 
-## 📖 How to Use
+1. **Open** http://localhost:3000 in your browser
+2. **Left Panel - Job Description**:
+   - Paste or type a job description
+   - Click "🔍 Analyze JD"
+   - View extracted skills and requirements
 
-1. **Paste Job Description**: In the left panel, paste the job description you want to analyze
-2. **Click "Analyze JD"**: The system extracts required skills and experience
-3. **Upload Resume**: Drag and drop or click to upload a PDF or DOCX resume in the right panel
-4. **Click "Compare & Rate"**: The system:
-   - Compares the resume with the job description
-   - Generates a matching score
-   - Highlights matching skills
-   - Identifies missing skills
-   - Shows duplicate content
+3. **Right Panel - Resume Analysis**:
+   - Upload a PDF or DOCX resume file
+   - Click "🧠 Compare & Rate"
+   - Get matching score and detailed analysis
 
-## 🔍 Analysis Features
+## ✨ Key Features
 
 ### Job Description Analysis
-- Extracts required technical skills
-- Identifies years of experience required
-- Finds key technologies mentioned
-- Extracts key terms and requirements
+- ✓ Extracts required skills automatically
+- ✓ Identifies experience requirements
+- ✓ Detects technologies and tools
+- ✓ Highlights key terms
 
-### Resume Validation
-- Removes duplicate sentences found in JD
-- Extracts candidate skills and experience
-- Calculates skill match percentage
-- Provides skill-by-skill comparison
-- Highlights frequently mentioned skills
+### Resume Analysis & Matching
+- ✓ Matches skills against job requirements
+- ✓ Generates matching percentage (0-100%)
+- ✓ Shows matched and missing skills
+- ✓ Identifies duplicate sentences
+- ✓ Highlights key matching competencies
 
-### Matching Score
-- **0-50%**: Low match - significant skill gaps
-- **50-75%**: Medium match - meets some requirements
-- **75-100%**: High match - strong candidate fit
+### Matching Score Interpretation
+- 🔴 **0-50%**: Low Match (significant gaps)
+- 🟡 **50-75%**: Medium Match (some alignment)
+- 🟢 **75-100%**: High Match (strong fit)
 
-## 📝 API Endpoints
+## 🔧 Troubleshooting
 
-### Backend (Node.js)
+### Issue: "Port 5000 already in use"
+**Solution**: Edit `server/.env`
+```
+PORT=5001
+```
+Then update React to use new port:
+```
+REACT_APP_API_URL=http://localhost:5001
+```
 
-- `GET /health` - Health check
-- `POST /api/extract-resume` - Extract text from uploaded resume (PDF/DOCX)
-- `POST /api/analyze-jd` - Analyze job description
-- `POST /api/analyze-match` - Compare resume with JD and generate score
+### Issue: "npm: command not found"
+**Solution**: Install Node.js from https://nodejs.org/
 
-### AI Service (Python)
+### Issue: "python: command not found"
+**Solution**: Install Python from https://www.python.org/
 
-- `GET /health` - Health check
-- `POST /analyze-skills` - Extract skills from text
-- `POST /analyze-experience` - Extract experience information
-- `POST /compare-texts` - Find similarities between texts
+### Issue: File upload not working
+**Solution**:
+1. Ensure backend is running
+2. Check file size < 10MB
+3. Verify file is PDF or DOCX
+4. Check browser console (F12) for errors
 
-## 🔧 Configuration
+### Issue: React app won't start
+**Solution**:
+```bash
+cd client
+npm cache clean --force
+rm -rf node_modules
+npm install
+npm start
+```
 
-### Environment Variables
+## 📊 API Endpoints
 
-Create a `.env` file in the `server` directory:
+### Backend API (Node.js)
 
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/api/extract-resume` | Upload and extract resume text |
+| POST | `/api/analyze-jd` | Analyze job description |
+| POST | `/api/analyze-match` | Compare resume with JD |
+
+### AI Service API (Python)
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| POST | `/analyze-skills` | Extract skills from text |
+| POST | `/analyze-experience` | Extract experience info |
+| POST | `/compare-texts` | Find text similarities |
+
+## 🎯 Testing the App
+
+### Sample Job Description:
+```
+Senior Full Stack Developer
+
+Requirements:
+- 5+ years of experience with JavaScript and Python
+- Strong knowledge of React.js and Node.js
+- Experience with AWS and Docker
+- SQL and MongoDB database experience
+- Git and CI/CD pipelines
+- Agile development methodology
+```
+
+### Expected Results:
+- Skills: javascript, python, react, nodejs, aws, docker, sql, mongodb, git
+- Experience: 5+ years
+- Match Score: Depends on your resume
+
+## 📝 Environment Configuration
+
+### Backend (.env)
 ```
 PORT=5000
 NODE_ENV=development
 ```
 
-## 📱 Browser Support
+### Frontend (.env)
+```
+REACT_APP_API_URL=http://localhost:5000
+```
 
-- Chrome (latest)
-- Firefox (latest)
-- Safari (latest)
-- Edge (latest)
+### AI Service (app.py)
+```python
+port = os.environ.get('PORT', 5001)
+```
 
-## 🚧 Future Enhancements
+## 🚀 Production Deployment
 
-- Integration with advanced NLP models (BERT, GPT)
-- Resume template matching
-- Salary expectation analysis
-- Interview readiness scoring
-- Email notification system
-- Resume improvement suggestions
-- Dashboard and analytics
-- User authentication and history
+### Frontend (Vercel/Netlify)
+```bash
+cd client
+npm run build
+# Deploy 'build' folder
+```
 
-## 📄 File Upload Specifications
+### Backend (Heroku/AWS)
+```bash
+# Set environment variables
+# Deploy server directory
+npm install --production
+npm start
+```
 
-- **Formats Supported**: PDF (.pdf), DOCX (.docx)
-- **Max File Size**: 10MB (configurable)
-- **Supported PDF Types**: Standard PDF documents
-- **Supported DOCX Types**: Microsoft Word 2007+
+## 📱 Browser Compatibility
 
-## ⚠️ Important Notes
+- ✓ Chrome/Chromium (latest)
+- ✓ Firefox (latest)
+- ✓ Safari (latest)
+- ✓ Edge (latest)
 
-- The AI analysis uses pattern matching and NLP
-- For production use, consider integrating with advanced AI services
-- Ensure API keys are properly configured for external AI services
-- Always validate extracted data
+## 🔐 Security Considerations
 
-## 🤝 Contributing
+- Local-only processing (no cloud upload)
+- Temporary file storage in memory
+- Add CORS validation in production
+- Implement rate limiting
+- Add authentication for production use
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## 📚 Project Dependencies
 
-## 📄 License
+### Backend
+- express: Web framework
+- multer: File upload handling
+- cors: Cross-Origin Resource Sharing
+- pdfparse: PDF text extraction
+- axios: HTTP client
 
-MIT License - feel free to use this project for personal or commercial purposes.
+### Frontend
+- react: UI library
+- axios: HTTP client
+- react-scripts: Build tools
+
+### AI Service
+- flask: Web framework
+- nltk: Natural Language Toolkit
+- flask-cors: CORS support
+
+## 🆘 Getting Help
+
+1. Check **QUICKSTART.md** for common tasks
+2. Review **README.md** for full documentation
+3. Check browser console (F12) for errors
+4. Check terminal output for backend/AI service logs
+
+## ✅ Verification Checklist
+
+Before using, verify:
+- [ ] Node.js installed (`node -v` returns v16+)
+- [ ] npm installed (`npm -v` returns 7+)
+- [ ] Python installed (`python --version` returns 3.8+)
+- [ ] Backend dependencies installed
+- [ ] Frontend dependencies installed
+- [ ] All 3 services starting without errors
+
+## 🎉 Success Indicators
+
+✓ Backend: "Server is running on http://localhost:5000"
+✓ Frontend: Browser opens at http://localhost:3000
+✓ AI Service: "Running on http://127.0.0.1:5001"
 
 ## 📞 Support
 
-For issues, questions, or suggestions, please create an issue in the repository.
-
-## 🔐 Privacy
-
-- All data is processed locally or on your servers
-- No data is sent to third parties unless explicitly configured
-- Uploaded files are stored temporarily and can be deleted
-- Respect user privacy and comply with data protection regulations
+For detailed information:
+- See **README.md** - Complete documentation
+- See **QUICKSTART.md** - Quick reference
 
 ---
 
-**Happy Matching! 🚀**
+**You're all set! Start the three services and navigate to http://localhost:3000 🚀**
