@@ -2,27 +2,41 @@
 
 ## 🚀 Get Started in 5 Minutes
 
-### Option 1: Automated Setup (Windows)
+### Prerequisites First
+Make sure you have installed:
+- **Git**: https://git-scm.com/
+- **Node.js**: https://nodejs.org/
+- **Python 3**: https://python.org/
 
-1. **Run the setup script**:
-   ```
-   setup.bat
-   ```
-   This will automatically install all dependencies for backend, frontend, and AI service.
+### Option 1: Automated Setup (Windows - First Time)
 
-### Option 2: Automated Setup (macOS/Linux)
+Run the installation script:
+```
+.\windows_install.bat
+```
 
-1. **Make the script executable**:
-   ```bash
-   chmod +x setup.sh
-   ```
+This will clone the repo, install all dependencies, and start everything!
 
-2. **Run the setup script**:
-   ```bash
-   ./setup.sh
-   ```
+### Option 2: Automated Setup (macOS/Linux - First Time)
 
-### Option 3: Manual Setup
+```bash
+chmod +x macos_install.sh
+./macos_install.sh
+```
+
+### Option 3: Quick Start (After Installation)
+
+**Windows:**
+```
+.\run.bat
+```
+
+**macOS/Linux:**
+```bash
+./run.sh
+```
+
+### Option 4: Manual Setup
 
 #### Step 1: Install Backend Dependencies
 ```bash

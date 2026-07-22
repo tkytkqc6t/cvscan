@@ -2,20 +2,25 @@
 
 ## 🚀 Start in 30 Seconds
 
+### First Time:
 ```bash
 # Windows
-setup.bat
+.\windows_install.bat
 
 # Mac/Linux  
-./setup.sh
-
-# Then open 3 terminals:
-# Terminal 1:  cd server && npm start
-# Terminal 2:  cd client && npm start
-# Terminal 3:  cd ai-service && python app.py
-
-# Browser: http://localhost:3000
+./macos_install.sh
 ```
+
+### After That:
+```bash
+# Windows
+.\run.bat
+
+# Mac/Linux
+./run.sh
+```
+
+# Browser: http://localhost:3001
 
 ---
 

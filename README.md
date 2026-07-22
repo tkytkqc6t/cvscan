@@ -49,14 +49,51 @@ CVScan/
 - **AI/NLP**: Python with NLTK
 - **File Processing**: PDF-parse, DOCX support
 
+## ✅ Prerequisites
+
+Before installing CVScan, ensure you have:
+- **Git** (v2.30+): https://git-scm.com/
+- **Node.js** (v16+ or v18+ LTS): https://nodejs.org/
+- **Python 3** (v3.8+): https://python.org/
+
+Verify installation:
+```bash
+git --version
+node --version
+npm --version
+python --version
+```
+
 ## 📦 Installation
 
-### Prerequisites
-- Node.js (v16+)
-- Python (v3.8+)
-- npm or yarn
+### Option 1: Automated Installation (Recommended)
 
-### Backend Setup
+**Windows:**
+```bash
+.\windows_install.bat
+```
+
+**macOS/Linux:**
+```bash
+chmod +x macos_install.sh
+./macos_install.sh
+```
+
+This script will:
+1. Clone the repository
+2. Install all dependencies
+3. Start all services
+4. Open the app in your browser
+
+### Option 2: Manual Setup
+
+**Clone Repository:**
+```bash
+git clone https://github.com/tkytkqc6t/cvscan.git
+cd cvscan
+```
+
+**Backend Setup
 
 ```bash
 cd server

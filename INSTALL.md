@@ -33,26 +33,67 @@ CVScan/
 │
 ├── README.md              # Full documentation
 ├── QUICKSTART.md          # Quick start guide
-├── setup.bat              # Windows automated setup
-└── setup.sh               # Unix automated setup
+├── HOW-TO-RUN.md          # How to run guide
+├── windows_install.bat    # Windows first-time installation
+├── macos_install.sh       # macOS/Linux first-time installation
+├── run.bat                # Windows quick start (after install)
+└── run.sh                 # Unix quick start (after install)
+```
+
+## ✅ Prerequisites
+
+Before installing CVScan, ensure you have these tools:
+
+**1. Git** - https://git-scm.com/
+- Windows: Download installer
+- macOS: `brew install git`
+- Linux: `sudo apt-get install git`
+
+**2. Node.js** - https://nodejs.org/ (v16+ or v18+ LTS)
+- Download the LTS version
+- This includes npm automatically
+
+**3. Python 3** - https://python.org/ (3.8 or higher)
+- Windows: Download installer
+- macOS: `brew install python3`
+- Linux: `sudo apt-get install python3`
+
+**Verify Installation:**
+```bash
+git --version
+node --version
+npm --version
+python3 --version
 ```
 
 ## ⚡ Quick Install (Choose One)
 
-### Option A: Automated Setup (Recommended)
+### Option A: Automated Setup (Recommended - First Time)
 
 #### Windows:
 ```batch
-setup.bat
+.\windows_install.bat
 ```
 
 #### macOS/Linux:
 ```bash
-chmod +x setup.sh
-./setup.sh
+chmod +x macos_install.sh
+./macos_install.sh
 ```
 
-### Option B: Manual Installation
+### Option B: Quick Start (After Installation)
+
+#### Windows:
+```batch
+.\run.bat
+```
+
+#### macOS/Linux:
+```bash
+./run.sh
+```
+
+### Option C: Manual Installation
 
 #### 1. Backend Setup
 ```bash

@@ -313,9 +313,9 @@ The application is ready for:
 
 ## 📚 Next Steps
 
-1. ✅ **Run Setup**: Execute `setup.bat` (Windows) or `setup.sh` (Unix)
-2. ✅ **Start Services**: Open 3 terminals and run servers
-3. ✅ **Open App**: Navigate to http://localhost:3000
+1. ✅ **Install Prerequisites**: Git, Node.js, Python 3
+2. ✅ **Run Install Script**: `windows_install.bat` (Windows) or `macos_install.sh` (macOS/Linux)
+3. ✅ **Open App**: Browser will open to http://localhost:3001
 4. ✅ **Test**: Upload a resume and analyze against a JD
 5. ✅ **Customize**: Modify skills list, colors, algorithms
 6. ✅ **Deploy**: Push to GitHub and deploy to cloud

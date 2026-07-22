@@ -1,25 +1,31 @@
 # CVScan - Getting Started Checklist
 
-## ✅ Pre-Requisites Check
+## ✅ Prerequisites Check
+- [ ] Git installed - Check: `git --version`
 - [ ] Node.js installed (v16+) - Check: `node -v`
 - [ ] npm installed (v7+) - Check: `npm -v`
-- [ ] Python installed (v3.8+) - Check: `python --version`
-- [ ] Administrator access for installations
+- [ ] Python 3 installed (v3.8+) - Check: `python3 --version`
 
 ## 📦 Installation (Choose One)
 
-### Option A: Automated Setup
-- [ ] Windows users: Run `setup.bat`
-- [ ] Mac/Linux users: Run `chmod +x setup.sh && ./setup.sh`
-- [ ] Wait for installation to complete (5-10 minutes)
+### Option A: Full Automated Setup (First Time - Recommended)
+- [ ] Windows users: Run `.\windows_install.bat`
+- [ ] Mac/Linux users: Run `chmod +x macos_install.sh && ./macos_install.sh`
+- [ ] Wait for installation to complete (10-15 minutes)
+- [ ] Browser will automatically open to http://localhost:3001
 
-### Option B: Manual Setup
+### Option B: Quick Start (After Installation)
+- [ ] Windows users: Run `.\run.bat`
+- [ ] Mac/Linux users: Run `./run.sh`
+- [ ] Browser will automatically open to http://localhost:3001
+
+### Option C: Manual Setup
 - [ ] Open terminal in project root
 - [ ] Run: `cd server && npm install && cd ..`
 - [ ] Run: `cd client && npm install && cd ..`
-- [ ] Run: `cd ai-service && pip install -r requirements.txt && cd ..`
+- [ ] Run: `cd ai-service && python3 -m pip install flask flask-cors nltk python-dotenv && cd ..`
 
-## 🚀 Running the Application
+## 🚀 Running the Application Manually
 
 ### Terminal 1: Backend Server
 - [ ] Open a terminal/PowerShell
@@ -31,12 +37,12 @@
 - [ ] Open a second terminal/PowerShell
 - [ ] Navigate to project root
 - [ ] Run: `cd client && npm start`
-- [ ] Verify: Browser opens to http://localhost:3000
+- [ ] Verify: Browser opens to http://localhost:3001
 
 ### Terminal 3: AI Service (Optional)
 - [ ] Open a third terminal/PowerShell
 - [ ] Navigate to project root
-- [ ] Run: `cd ai-service && python app.py`
+- [ ] Run: `cd ai-service && python3 app.py`
 - [ ] Verify: See "Running on http://127.0.0.1:5001"
 
 ## 🎯 First Test
@@ -47,7 +53,7 @@
 - [ ] Save resume as PDF or DOCX file
 
 ### Step 2: Job Description Analysis
-- [ ] Go to http://localhost:3000
+- [ ] Go to http://localhost:3001
 - [ ] Paste job description in left panel
 - [ ] Click "🔍 Analyze JD"
 - [ ] Verify: Skills and experience appear
@@ -64,20 +70,23 @@
 - [ ] Two-column layout is visible
 - [ ] Can type in job description area
 - [ ] Can drag-and-drop files
+- [ ] Opening at http://localhost:3001
 
 ### Backend (Terminal 1)
 - [ ] No error messages
 - [ ] Responds to API calls
 - [ ] Shows request logs
+- [ ] Running on port 5000
 
 ### AI Service (Terminal 3)
 - [ ] Starts without errors
 - [ ] Ready for requests
+- [ ] Running on port 5001
 
 ## 🔧 Troubleshooting Quick Fixes
 
 ### Port Already in Use
-- [ ] Kill process on port 5000: `netstat -ano | findstr :5000` (Windows)
+- [ ] Kill process on port 3001: `netstat -ano | findstr :3001` (Windows)
 - [ ] Or change PORT in `server/.env` to 5001
 
 ### Dependencies Failed to Install

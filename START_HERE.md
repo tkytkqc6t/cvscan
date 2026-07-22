@@ -45,9 +45,10 @@ Your complete **CVScan** web application has been created and is ready to run! T
 - This summary file
 
 ### ✅ **Automated Setup Scripts**
-- Windows setup (setup.bat)
-- Unix/Linux/Mac setup (setup.sh)
-- One-command installation
+- **windows_install.bat** - First-time installation for Windows
+- **macos_install.sh** - First-time installation for macOS/Linux
+- **run.bat** - Quick start for Windows (after installation)
+- **run.sh** - Quick start for macOS/Linux (after installation)
 - Dependency management
 
 ---
@@ -99,19 +100,43 @@ Your complete **CVScan** web application has been created and is ready to run! T
 
 ---
 
-## 🚀 Quick Start (3 Simple Steps)
+## ✅ Prerequisites
 
-### Step 1: Automatic Setup
+Before running CVScan, install these tools:
+- **Git**: https://git-scm.com/
+- **Node.js**: https://nodejs.org/ (LTS recommended)
+- **Python 3**: https://python.org/ (3.8+)
+
+---
+
+## 🚀 Quick Start (Choose Your Method)
+
+### Option 1: Full Installation (First Time)
+If you don't have the code yet, use the installation scripts:
+
 ```bash
 # Windows
-setup.bat
+.\ windows_install.bat
 
 # Mac/Linux
-chmod +x setup.sh && ./setup.sh
+chmod +x macos_install.sh && ./macos_install.sh
 ```
 
-### Step 2: Start Three Services
-Open 3 terminals:
+This will clone the repo, install dependencies, and start everything!
+
+### Option 2: Quick Start (Already Installed)
+If you already have CVScan installed:
+
+```bash
+# Windows
+.\run.bat
+
+# Mac/Linux
+./run.sh
+```
+
+### Option 3: Manual Start
+Open 3 terminals and run:
 
 ```bash
 # Terminal 1 - Backend
@@ -124,8 +149,7 @@ cd client && npm start
 cd ai-service && python app.py
 ```
 
-### Step 3: Open Browser
-Navigate to: **http://localhost:3000**
+Then navigate to: **http://localhost:3001**
 
 That's it! 🎉
 
@@ -141,7 +165,7 @@ That's it! 🎉
 - Returns matching analysis
 - Provides REST API endpoints
 
-### Frontend (Port 3000)
+### Frontend (Port 3001)
 - Beautiful user interface
 - Handles user input
 - Manages file uploads

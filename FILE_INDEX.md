@@ -210,7 +210,18 @@ User Browser (http://localhost:3000)
 
 ---
 
-## 📝 File Configuration Examples
+## � Setup & Run Scripts
+
+| File | Purpose | When to Use |
+|------|---------|-------------|
+| **windows_install.bat** | Full Windows installation | First time setup (clones repo + installs dependencies) |
+| **macos_install.sh** | Full macOS/Linux installation | First time setup (clones repo + installs dependencies) |
+| **run.bat** | Quick Windows startup | After installation (recurring use) |
+| **run.sh** | Quick macOS/Linux startup | After installation (recurring use) |
+
+---
+
+## �📝 File Configuration Examples
 
 ### .env Files
 
