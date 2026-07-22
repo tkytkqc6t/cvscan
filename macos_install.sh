@@ -95,19 +95,44 @@ echo ""
 
 # Determine OS type
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    # macOS
+    # macOS - ensure we can open new Terminal windows (osascript preferred)
+    if command -v osascript >/dev/null 2>&1; then
+        use_osascript=1
+    elif command -v open >/dev/null 2>&1; then
+        use_open=1
+    else
+        echo "Error: Cannot open new Terminal windows (no 'osascript' or 'open' available)."
+        echo "Start services manually in three Terminal windows:"
+        echo "  cd '$(pwd)/ai-service' && python3 app.py"
+        echo "  cd '$(pwd)/server' && npm start"
+        echo "  cd '$(pwd)/client' && npm start"
+        exit 1
+    fi
+
     echo "Starting AI Service (Flask) on http://localhost:5001..."
-    open -a Terminal "cd '$(pwd)/ai-service' && python3 app.py"
+    if [ "${use_osascript:-}" = "1" ]; then
+        osascript -e "tell application \"Terminal\" to do script \"cd '$(pwd)/ai-service' && python3 app.py\""
+    else
+        open -a Terminal "cd '$(pwd)/ai-service' && python3 app.py"
+    fi
     sleep 3
-    
+
     echo "Starting Backend API (Express) on http://localhost:5000..."
-    open -a Terminal "cd '$(pwd)/server' && npm start"
+    if [ "${use_osascript:-}" = "1" ]; then
+        osascript -e "tell application \"Terminal\" to do script \"cd '$(pwd)/server' && npm start\""
+    else
+        open -a Terminal "cd '$(pwd)/server' && npm start"
+    fi
     sleep 3
-    
+
     echo "Starting Frontend (React) on http://localhost:3001..."
-    open -a Terminal "cd '$(pwd)/client' && npm start"
+    if [ "${use_osascript:-}" = "1" ]; then
+        osascript -e "tell application \"Terminal\" to do script \"cd '$(pwd)/client' && npm start\""
+    else
+        open -a Terminal "cd '$(pwd)/client' && npm start"
+    fi
     sleep 5
-    
+
     echo "Opening application in browser..."
     sleep 2
     open "http://localhost:3001"
