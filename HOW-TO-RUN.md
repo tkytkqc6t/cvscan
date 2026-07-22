@@ -2,6 +2,32 @@
 
 This guide covers all methods to start the CVScan application.
 
+## ✅ Prerequisites
+
+Before running the installation scripts, ensure you have these three tools installed on your computer:
+
+### 1. **Git** 📦
+- **Download:** https://git-scm.com/
+- **Verify:** `git --version`
+
+### 2. **Node.js** ⚙️
+- **Download:** https://nodejs.org/ (LTS recommended)
+- **Verify:** `node --version` and `npm --version`
+
+### 3. **Python 3** 🐍
+- **Download:** https://python.org/ (3.8 or higher)
+- **Verify:** `python --version` or `python3 --version`
+
+**Not sure if you have them?** Run this to check:
+```powershell
+git --version
+node --version
+npm --version
+python --version
+```
+
+---
+
 ## 🚀 First-Time Installation (Complete Setup)
 
 ### Windows
